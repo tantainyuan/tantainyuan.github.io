@@ -46,7 +46,38 @@
                          <article class="mdui-shadow-10 mdui-p-a-2 post-list">
                            <div class="mdui-typo-display-1 mdui-m-b-3">vue移动端适配</div>
                            <a  class="index-list-biaoqian ">2019-11-13</a>
-                           <div class="mdui-typo mdui-m-t-3 post-neirong"><p>放大</p>
+                           <div class="mdui-typo mdui-m-t-3 post-neirong"><h1 id="安装插件">安装插件</h1>
+<pre><code>npm i lib-flexible --save        // 载lib-flexible
+npm install px2rem-loader        // 安装px2rem-loader
+</code></pre>
+<h1 id="postcssconfigjs配置">postcss.config.js配置</h1>
+<pre><code>module.exports = {
+  plugins: {
+    autoprefixer: {},
+    &quot;postcss-pxtorem&quot;: {
+      &quot;rootValue&quot;: 32,
+      &quot;propList&quot;: [&quot;*&quot;]
+    }
+  }
+}
+
+</code></pre>
+<h1 id="如果引入了第三方插件的话">如果引入了第三方插件的话</h1>
+<h2 id="插件安装">插件安装</h2>
+<pre><code> npm install postcss-px2rem-exclude --save
+</code></pre>
+<h1 id="postcssconfigjs配置-2">postcss.config.js配置</h1>
+<pre><code>module.exports = {
+  plugins: {
+    autoprefixer: {},
+    'postcss-px2rem-exclude': {
+      remUnit: 32,
+      exclude: /node_modules|folder_name/i
+    }
+  }
+}
+
+</code></pre>
 </div>
                               <div class="mdui-divider mdui-m-t-3"></div>
                               <div class="mdui-row-xs-2 mdui-m-t-2">
@@ -82,7 +113,17 @@
 </script>
                          </article>
                  <div class="toc-container mdui-float-right">
-                
+                <ul class="markdownIt-TOC">
+<li><a href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6">安装插件</a></li>
+<li><a href="#postcssconfigjs%E9%85%8D%E7%BD%AE">postcss.config.js配置</a></li>
+<li><a href="#%E5%A6%82%E6%9E%9C%E5%BC%95%E5%85%A5%E4%BA%86%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8F%92%E4%BB%B6%E7%9A%84%E8%AF%9D">如果引入了第三方插件的话</a>
+<ul>
+<li><a href="#%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85">插件安装</a></li>
+</ul>
+</li>
+<li><a href="#postcssconfigjs%E9%85%8D%E7%BD%AE-2">postcss.config.js配置</a></li>
+</ul>
+
               </div>
 
                         </div>
