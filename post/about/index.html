@@ -3,7 +3,7 @@
         <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
         <meta charset="utf-8">
         <meta name="referrer" content="never">
-        <title>可达鸭</title>
+        <title>关于 | 可达鸭</title>
         <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.11.1/katex.min.css">
         <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" href="http://tantainyuan.github.io/styles/main.css">
@@ -17,9 +17,9 @@
 
     </head>
     <body class="mdui-theme-primary-purple mdui-theme-accent-purple">
-        <header class="header mdui-m-b-3">
-                          <button class="mdui-btn daohang mdui-btn-icon mdui-btn-dense mdui-color-theme-500 mdui-ripple yinying mdui-m-t-1 mdui-m-l-1" mdui-menu="{target: '#demo-attr-cascade'}"><i class="mdui-icon material-icons">&#xe5d2;</i></button>
-                <ul class="mdui-menu " id="demo-attr-cascade">
+        <header class="index-img mdui-m-b-3" >
+                          <button class="mdui-btn  mdui-btn-icon mdui-btn-dense mdui-color-theme-500 mdui-ripple yinying mdui-m-t-1 mdui-m-l-1" mdui-menu="{target: '#demo-attr-cascade'}"><i class="mdui-icon material-icons">&#xe5d2;</i></button>
+                <ul class="mdui-menu" id="demo-attr-cascade">
                 
                         <li class="mdui-menu-item">
                           <a href="/" class="mdui-ripple">首页</a>
@@ -38,24 +38,72 @@
                         </li>
                 
                       </ul>
-                      <div class="mdui-text-center">
-                      <div class="mdui-typo-display-4 mdui-m-b-3 index-title">可达鸭</div>
-                      <div class="mdui-typo-headline">我的代码没有bug</div>
-                      </div>
 
         </header>
-        <div class="mdui-container">
+        <div class="mdui-container post">
                 <div class="mdui-row">
-                        <div class="mdui-col-md-10 mdui-col-offset-md-1 ">
- 
-                            <div class="mdui-row-md-3 mdui-row-xs-1">
+                        <div class="mdui-col-md-8 mdui-col-offset-md-2 ">
+                         <article class="mdui-shadow-10 mdui-p-a-2 post-list">
+                           <div class="mdui-typo-display-1 mdui-m-b-3">关于</div>
+                           <a  class="index-list-biaoqian ">2019-11-13</a>
+                           <div class="mdui-typo mdui-m-t-3 post-neirong"><p>good boy</p>
+<!-- more -->
+</div>
+                              <div class="mdui-divider mdui-m-t-3"></div>
+                              <div class="mdui-row-xs-2 mdui-m-t-2">
+  <div class="mdui-col"> </div>
+ <div class="mdui-col"></div>
+                                </div>
+                                <div class="mdui-divider mdui-m-t-2"></div>
+   
+ <script src="http://tantainyuan.github.io/media/scripts/Valine.min.js"></script>
+ <div class="comment"></div>
 
-                                  </div>
-                         
+<script>
+      new Valine({
+            el: '.comment',
+
+
+
+            path: window.location.pathname,
+            pageSize: 30,
+            avatar:'mm', 
+       })
+
+    </script> 
+<script>
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
+    }
+</script>
+                         </article>
+                 <div class="toc-container mdui-float-right">
+                
+              </div>
+
                         </div>
                  </div>
           
         </div>
+        <script data-no-instant>
+    (function ($) {
+        $.extend({
+            adamsOverload: function () {
+                $.viewImage({
+                    'target'  : '.post-neirong img',
+                    'exclude' : '.vsmile-icons img , .song-links-item img',
+                    'delay'   : 300
+                });
+            }
+        });
+    })(jQuery);
+    jQuery.adamsOverload();
+</script>
         <footer class="footer mdui-m-t-5 mdui-text-center">
                <nav class="social-links">
                       <ul>
