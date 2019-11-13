@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tantainyuan.github.io</id>
-    <title>Gridea</title>
-    <updated>2019-11-13T02:29:54.760Z</updated>
+    <title>可达鸭</title>
+    <updated>2019-11-13T02:32:28.214Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tantainyuan.github.io"/>
     <link rel="self" href="https://tantainyuan.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>干巴爹</subtitle>
     <logo>https://tantainyuan.github.io/images/avatar.png</logo>
     <icon>https://tantainyuan.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2019, Gridea</rights>
+    <rights>All rights reserved 2019, 可达鸭</rights>
     <entry>
         <title type="html"><![CDATA[fdafasd ]]></title>
         <id>https://tantainyuan.github.io/post/fdafasd</id>
