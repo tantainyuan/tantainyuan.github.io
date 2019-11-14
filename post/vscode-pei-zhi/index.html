@@ -46,7 +46,51 @@
                          <article class="mdui-shadow-10 mdui-p-a-2 post-list">
                            <div class="mdui-typo-display-1 mdui-m-b-3">vscode配置</div>
                            <a  class="index-list-biaoqian ">2019-11-13</a>
-                           <div class="mdui-typo mdui-m-t-3 post-neirong"><p>哈哈哈</p>
+                           <div class="mdui-typo mdui-m-t-3 post-neirong"><h1 id="插件">插件</h1>
+<p><img src="http://tantainyuan.github.io/post-images/1573696979586.png" alt=""><br>
+<img src="http://tantainyuan.github.io/post-images/1573696988239.png" alt=""><br>
+<img src="http://tantainyuan.github.io/post-images/1573696995172.png" alt=""></p>
+<h1 id="代码段">代码段</h1>
+<h2 id="htmljs">html.js</h2>
+<pre><code>{
+	&quot;a标签&quot;: {
+		&quot;prefix&quot;: &quot;aaa&quot;,
+		&quot;body&quot;: [
+			&quot;&lt;a href=\&quot;javascript:;\&quot;&gt;$1&lt;/a&gt;&quot;
+		],
+		&quot;description&quot;: &quot;我自己定义的a标签&quot;
+	},
+	&quot;理想视口标签&quot;: {
+		&quot;prefix&quot;: &quot;meta:vp&quot;,
+		&quot;body&quot;: [
+			&quot;&lt;meta name=\&quot;viewport\&quot; content=\&quot;width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no\&quot;&gt;&quot;
+		],
+		&quot;description&quot;: &quot;理想视口的标准写法&quot;
+	},
+	&quot;多了一个div&quot;: {
+		&quot;prefix&quot;: &quot;qdsq&quot;,
+		&quot;body&quot;: [
+			&quot;&lt;!DOCTYPE html&gt; &lt;html lang=\&quot;en\&quot;&gt; &lt;head&gt; &lt;meta charset=\&quot;UTF-8\&quot;&gt; &lt;meta name=\&quot;viewport\&quot; content=\&quot;width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no\&quot;&gt; &lt;title&gt;$TM_FILENAME&lt;/title&gt; &lt;style&gt; div:nth-child(1) { width: 200px; height: 200px; background-color: aqua;  margin: 100px auto; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;div&gt;&lt;/div&gt;   &lt;script&gt; var div=document.querySelector(\&quot;div\&quot;); &lt;/script&gt;&lt;/body&gt; &lt;/html&gt;&quot;
+		],
+		&quot;description&quot;: &quot;多了一个div&quot;
+	},
+	&quot;li标签嵌套a标签嵌套图片标签&quot;: {
+		&quot;prefix&quot;: &quot;liai&quot;,
+		&quot;body&quot;: [
+			&quot; (li&gt;a[href=\&quot;javascript:;\&quot;]&gt;img[src])&quot;
+		],
+		&quot;description&quot;: &quot;li&gt;a&gt;img&quot;
+	}
+	,
+	&quot;生成jq标签&quot;: {
+		&quot;prefix&quot;: &quot;sq&quot;,
+		&quot;body&quot;: [
+			&quot; &lt;script src=\&quot;https://cdn.staticfile.org/jquery/1.2.3/jquery.js\&quot;&gt;&lt;/script&gt;&quot;
+		],
+		&quot;description&quot;: &quot;&quot;
+	}
+}
+</code></pre>
 </div>
                               <div class="mdui-divider mdui-m-t-3"></div>
                               <div class="mdui-row-xs-2 mdui-m-t-2">
@@ -82,7 +126,15 @@
 </script>
                          </article>
                  <div class="toc-container mdui-float-right">
-                
+                <ul class="markdownIt-TOC">
+<li><a href="#%E6%8F%92%E4%BB%B6">插件</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E6%AE%B5">代码段</a>
+<ul>
+<li><a href="#htmljs">html.js</a></li>
+</ul>
+</li>
+</ul>
+
               </div>
 
                         </div>
