@@ -1,171 +1,215 @@
+<!DOCTYPE html>
 <html>
-      <head>
-        <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
-        <meta charset="utf-8">
-        <meta name="referrer" content="never">
-        <title>可达鸭</title>
-        <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.11.1/katex.min.css">
-        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="http://tantainyuan.github.io/styles/main.css">
-          <script src="http://tantainyuan.github.io/media/scripts/mdui.min.js"></script>
-        <link rel="stylesheet" href="https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css">
-        <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Ma+Shan+Zheng&display=swap" rel="stylesheet">
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
-        <script src="http://tantainyuan.github.io/media/scripts/script.js"></script>
-        <script >hljs.initHighlightingOnLoad();</script>
+  <head>
+    <meta charset="utf-8" >
+
+<title>可达鸭</title>
+<meta name="description" content="我的代码没有bug">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="http://tantainyuan.github.io/favicon.ico?v=1573780993189">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="http://tantainyuan.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="http://tantainyuan.github.io">
+        <img src="http://tantainyuan.github.io/images/avatar.png?v=1573780993189" class="site-logo">
+        <h1 class="site-title">可达鸭</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
         
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/tantainyuan?tab=repositories" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      我的代码没有bug
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="http://tantainyuan.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
 
-    </head>
-    <body class="mdui-theme-primary-purple mdui-theme-accent-purple">
-        <header class=" mdui-m-b-3 header">
-                          <button class="mdui-btn daohang mdui-btn-icon mdui-btn-dense mdui-color-theme-500 mdui-ripple yinying mdui-m-t-1 mdui-m-l-1" mdui-menu="{target: '#demo-attr-cascade'}"><i class="mdui-icon material-icons">&#xe5d2;</i></button>
-                <ul class="mdui-menu " id="demo-attr-cascade">
-                
-                        <li class="mdui-menu-item">
-                          <a href="/" class="mdui-ripple">首页</a>
-                        </li>
-                
-                        <li class="mdui-menu-item">
-                          <a href="/archives" class="mdui-ripple">归档</a>
-                        </li>
-                
-                        <li class="mdui-menu-item">
-                          <a href="/tags" class="mdui-ripple">标签</a>
-                        </li>
-                
-                        <li class="mdui-menu-item">
-                          <a href="/about" class="mdui-ripple">关于</a>
-                        </li>
-                
-                      </ul>
-                      <div class="mdui-text-center">
-                      <div class="mdui-typo-display-4 mdui-m-b-3 index-title">可达鸭</div>
-                      <div class="mdui-typo-headline">我的代码没有bug</div>
-                      </div>
 
-        </header >
-        <div class="mdui-container">
-                <div class="mdui-row">
-                        <div class="mdui-col-md-6 mdui-col-offset-md-3 ">
-                                                     
-                            <article class="mdui-m-t-4 index-list mdui-shadow-15 mdui-hoverable mdui-p-a-2 q">
-                                    <div class="mdui-row">
-                                            <div class="mdui-col-xs-12 ">
-                                              <div class="mdui-row mdui-m-b-2">
-                                                <div class="mdui-col-xs-12 mdui-col-sm-8">
-                                                    <div class="mdui-typo-headline mdui-m-b-2"><a href="http://tantainyuan.github.io/post/canvas" class="index-list-title">canvas</a></div>
-                                                    <div class="mdui-typo-body-2 index-list-neirong"></div>
-                                                </div>
-                                                <div class="mdui-col-xs-12 mdui-col-sm-4 "><div class="index-list-img mdui-shadow-8"></div></div>
-                                              </div>
-                                              
-                                              <a href="http://tantainyuan.github.io/post/canvas" class="index-list-biaoqian mdui-float-right yinying">2019-11-13</a>
-                                              
-
-                                            </div>
-                                          </div>
-
-                            </article>
-
-                            <article class="mdui-m-t-4 index-list mdui-shadow-15 mdui-hoverable mdui-p-a-2 q">
-                                    <div class="mdui-row">
-                                            <div class="mdui-col-xs-12 ">
-                                              <div class="mdui-row mdui-m-b-2">
-                                                <div class="mdui-col-xs-12 mdui-col-sm-8">
-                                                    <div class="mdui-typo-headline mdui-m-b-2"><a href="http://tantainyuan.github.io/post/CRBhi3JPB" class="index-list-title">vue移动端适配</a></div>
-                                                    <div class="mdui-typo-body-2 index-list-neirong"></div>
-                                                </div>
-                                                <div class="mdui-col-xs-12 mdui-col-sm-4 "><div class="index-list-img mdui-shadow-8"></div></div>
-                                              </div>
-                                              
-                                              <a href="http://tantainyuan.github.io/post/CRBhi3JPB" class="index-list-biaoqian mdui-float-right yinying">2019-11-13</a>
-                                              
-
-                                            </div>
-                                          </div>
-
-                            </article>
-
-                            <article class="mdui-m-t-4 index-list mdui-shadow-15 mdui-hoverable mdui-p-a-2 q">
-                                    <div class="mdui-row">
-                                            <div class="mdui-col-xs-12 ">
-                                              <div class="mdui-row mdui-m-b-2">
-                                                <div class="mdui-col-xs-12 mdui-col-sm-8">
-                                                    <div class="mdui-typo-headline mdui-m-b-2"><a href="http://tantainyuan.github.io/post/xiao-cheng-xu-biao-dan-yan-zheng" class="index-list-title">小程序表单验证</a></div>
-                                                    <div class="mdui-typo-body-2 index-list-neirong"></div>
-                                                </div>
-                                                <div class="mdui-col-xs-12 mdui-col-sm-4 "><div class="index-list-img mdui-shadow-8" style="background-image:url(http://tantainyuan.github.io/post-images/xiao-cheng-xu-biao-dan-yan-zheng.jpeg)"></div></div>
-                                              </div>
-                                              
-                                              <a href="http://tantainyuan.github.io/post/xiao-cheng-xu-biao-dan-yan-zheng" class="index-list-biaoqian mdui-float-right yinying">2019-11-13</a>
-                                              
-
-                                            </div>
-                                          </div>
-
-                            </article>
-
-                            <article class="mdui-m-t-4 index-list mdui-shadow-15 mdui-hoverable mdui-p-a-2 q">
-                                    <div class="mdui-row">
-                                            <div class="mdui-col-xs-12 ">
-                                              <div class="mdui-row mdui-m-b-2">
-                                                <div class="mdui-col-xs-12 mdui-col-sm-8">
-                                                    <div class="mdui-typo-headline mdui-m-b-2"><a href="http://tantainyuan.github.io/post/vscode-pei-zhi" class="index-list-title">vscode配置</a></div>
-                                                    <div class="mdui-typo-body-2 index-list-neirong"></div>
-                                                </div>
-                                                <div class="mdui-col-xs-12 mdui-col-sm-4 "><div class="index-list-img mdui-shadow-8" style="background-image:url(http://tantainyuan.github.io/post-images/vscode-pei-zhi.jpeg)"></div></div>
-                                              </div>
-                                              
-                                              <a href="http://tantainyuan.github.io/post/vscode-pei-zhi" class="index-list-biaoqian mdui-float-right yinying">2019-11-13</a>
-                                              
-
-                                            </div>
-                                          </div>
-
-                            </article>
-
-                                                   <nav class="mdui-m-y-3">
-                         
-                         
-                         </nav>
-
-                        </div>
-                 </div>
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
           
-        </div>
-        <footer class="footer mdui-m-t-5 mdui-text-center">
-               <nav class="social-links">
-                      <ul>
-                      
-                            
-                           
-                            
-                           
-                            
-                           
-                            
-                           
-                            
-                           
-                            
-                           
-                            
-                           
-                            
-                           
-                            
-                           
-                            
-                           
-                            
-                           
-                            
-                           
-                      </ul>
-                    </nav>
-                  <div class="copyright">
-                      <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
+            <article class="post-item">
+              <div class="left">
+                <a href="http://tantainyuan.github.io/post/vueconfigjs">
+                  <h2 class="post-title">vue.config.js</h2>
+                </a>
+                <div class="post-date">
+                  2019-11-15
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="http://tantainyuan.github.io/post/canvas">
+                  <h2 class="post-title">canvas</h2>
+                </a>
+                <div class="post-date">
+                  2019-11-13
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="http://tantainyuan.github.io/post/CRBhi3JPB">
+                  <h2 class="post-title">vue移动端适配</h2>
+                </a>
+                <div class="post-date">
+                  2019-11-13
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="http://tantainyuan.github.io/post/xiao-cheng-xu-biao-dan-yan-zheng">
+                  <h2 class="post-title">小程序表单验证</h2>
+                </a>
+                <div class="post-date">
+                  2019-11-13
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+                <a class="right" href="http://tantainyuan.github.io/post/xiao-cheng-xu-biao-dan-yan-zheng">
+                  <div class="feature-container" style="background-image: url('http://tantainyuan.github.io/post-images/xiao-cheng-xu-biao-dan-yan-zheng.jpeg')">
                   </div>
-              </footer>
-    </body>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="http://tantainyuan.github.io/post/vscode-pei-zhi">
+                  <h2 class="post-title">vscode配置</h2>
+                </a>
+                <div class="post-date">
+                  2019-11-13
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+                <a class="right" href="http://tantainyuan.github.io/post/vscode-pei-zhi">
+                  <div class="feature-container" style="background-image: url('http://tantainyuan.github.io/post-images/vscode-pei-zhi.jpeg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
+  
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
 </html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>vue.config.js | 可达鸭</title>
+<meta name="description" content="我的代码没有bug">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="http://tantainyuan.github.io/favicon.ico?v=1573780993189">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="http://tantainyuan.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="http://tantainyuan.github.io">
+        <img src="http://tantainyuan.github.io/images/avatar.png?v=1573780993189" class="site-logo">
+        <h1 class="site-title">可达鸭</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/tantainyuan?tab=repositories" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      我的代码没有bug
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="http://tantainyuan.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">vue.config.js</h2>
+            <div class="post-date">2019-11-15</div>
+            
+            <div class="post-content">
+              <h1 id="基础模板">基础模板</h1>
+<pre><code>module.exports = {
+  baseUrl: process.env.NODE_ENV === 'production'
+    ? '//your_url'
+    : '/',
+
+  outputDir: 'dist',
+
+  assetsDir: 'static',
+
+  filenameHashing: true,
+
+  // When building in multi-pages mode, the webpack config will contain different plugins
+  // (there will be multiple instances of html-webpack-plugin and preload-webpack-plugin).
+  // Make sure to run vue inspect if you are trying to modify the options for those plugins.
+  pages: {
+    index: {
+      // entry for the pages
+      entry: 'src/pages/index/index.js',
+      // the source template
+      template: 'src/pages/index/index.html',
+      // output as dist/index.html
+      filename: 'index.html',
+      // when using title option,
+      // template title tag needs to be &lt;title&gt;&lt;%= htmlWebpackPlugin.options.title %&gt;&lt;/title&gt;
+      title: '首页',
+      // chunks to include on this pages, by default includes
+      // extracted common chunks and vendor chunks.
+      chunks: ['chunk-vendors', 'chunk-common', 'index']
+    }
+    // when using the entry-only string format,
+    // template is inferred to be `public/subpage.html`
+    // and falls back to `public/index.html` if not found.
+    // Output filename is inferred to be `subpage.html`.
+    // subpage: ''
+  },
+
+  // eslint-loader 是否在保存的时候检查
+  lintOnSave: true,
+
+  // 是否使用包含运行时编译器的Vue核心的构建
+  runtimeCompiler: false,
+
+  // 默认情况下 babel-loader 忽略其中的所有文件 node_modules
+  transpileDependencies: [],
+
+  // 生产环境 sourceMap
+  productionSourceMap: false,
+
+  // cors 相关 https://jakearchibald.com/2017/es-modules-in-browsers/#always-cors
+  // corsUseCredentials: false,
+  // webpack 配置，键值对象时会合并配置，为方法时会改写配置
+  // https://cli.vuejs.org/guide/webpack.html#simple-configuration
+  configureWebpack: (config) =&gt; {
+  },
+
+  // webpack 链接 API，用于生成和修改 webapck 配置
+  // https://github.com/mozilla-neutrino/webpack-chain
+  chainWebpack: (config) =&gt; {
+    // 因为是多页面，所以取消 chunks，每个页面只对应一个单独的 JS / CSS
+    config.optimization
+      .splitChunks({
+        cacheGroups: {}
+      });
+
+    // 'src/lib' 目录下为外部库文件，不参与 eslint 检测
+    config.module
+      .rule('eslint')
+      .exclude
+      .add('/Users/maybexia/Downloads/FE/community_built-in/src/lib')
+      .end()
+  },
+
+  // 配置高于chainWebpack中关于 css loader 的配置
+  css: {
+    // 是否开启支持 foo.module.css 样式
+    modules: false,
+
+    // 是否使用 css 分离插件 ExtractTextPlugin，采用独立样式文件载入，不采用 &lt;style&gt; 方式内联至 html 文件中
+    extract: true,
+
+    // 是否构建样式地图，false 将提高构建速度
+    sourceMap: false,
+
+    // css预设器配置项
+    loaderOptions: {
+      css: {
+        // options here will be passed to css-loader
+      },
+
+      postcss: {
+        // options here will be passed to postcss-loader
+      }
+    }
+  },
+
+  // All options for webpack-dev-server are supported
+  // https://webpack.js.org/configuration/dev-server/
+  devServer: {
+    open: true,
+
+    host: '127.0.0.1',
+
+    port: 3000,
+
+    https: false,
+
+    hotOnly: false,
+
+    proxy: null,
+
+    before: app =&gt; {
+    }
+  },
+  // 构建时开启多进程处理 babel 编译
+  parallel: require('os').cpus().length &gt; 1,
+
+  // https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa
+  pwa: {},
+
+  // 第三方插件配置
+  pluginOptions: {}
+};
+</code></pre>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="http://tantainyuan.github.io/post/canvas">
+                  <h3 class="post-title">
+                    canvas
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
